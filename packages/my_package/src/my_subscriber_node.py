@@ -10,9 +10,9 @@ class MySubscriberNode(DTROS):
         self.sub = rospy.Subscriber('chatter', String, self.callback)
 
     def callback(self, data):
-        rospy.loginfo("I heard 's%'", data.data)
+        rospy.loginfo("I heard '%s'", data.data)
     
-if __name__ = '__main__':
+if __name__ == '__main__':
     node = MySubscriberNode(node_name = 'my_subscriber_node')
 
     rospy.spin()
